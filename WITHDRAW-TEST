@@ -1,0 +1,31 @@
+package SimpleBankingSystem;
+
+public class AccountTest {
+    public static void main(String[] args) {
+        Account account = new Account("Flor", "123", 100);
+
+        // Prueba: Retirar una cantidad válida
+        try {
+            account.withdrawAmount(50);
+            System.out.println("✅ Test retirar 50: PASSED. Nuevo saldo: " + account.getBalance());
+        } catch (Exception error) {
+            System.out.println("❌ Test retirar 50: FAILED");
+        }
+
+        // Prueba: Intentar retirar más de lo que hay en la cuenta
+        try {
+            account.withdrawAmount(100);
+            System.out.println("❌ Test retirar 100: FAILED (debería haber dado error)");
+        } catch (Exception error) {
+            System.out.println("✅ Test retirar 100: PASSED. Error esperado: " + e.getMessage());
+        }
+
+        // Prueba: Intentar retirar una cantidad negativa
+        try {
+            account.withdrawAmount(-20);
+            System.out.println("❌ Test retirar -20: FAILED (debería haber dado error)");
+        } catch (Exception error) {
+            System.out.println("✅ Test retirar -20: PASSED. Error esperado: " + e.getMessage());
+        }
+    }
+}
