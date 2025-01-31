@@ -1,0 +1,16 @@
+package RefactorExample;
+
+public class Main {
+    public static void main(String[] args) {
+        Factura factura = new Factura();
+        
+        factura.establecerSubtotal(1000);           //SUBTOTAL
+
+
+        factura.calcularImpuestos(21);             //IVA
+
+        factura.calcularTotal();                 //CALCUL TOTAL
+      
+        factura.mostrarFactura();               // RESULTAT
+    }
+}
