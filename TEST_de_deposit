@@ -1,0 +1,23 @@
+package SimpleBankingSystem;
+
+public class AccountTest {
+    public static void main(String[] args) {
+        Account account = new Account("Flor", "123", 100);
+
+        // TEST DEPOSITAR CUANTITAT POSITIVA
+        try {
+            account.depositAmount(50);
+            System.out.println("✅ Test depositar 50: PASSED. Nuevo saldo: " + account.getBalance());
+        } catch (Exception error) {
+            System.out.println("❌ Test depositar 50: FAILED");
+        }
+
+        // TEST DEPOSITAR CUANTITAT NEGATIVA
+        try {
+            account.depositAmount(-50);
+            System.out.println("❌ Test depositar -50: FAILED (debería haber dado error)");
+        } catch (Exception error) {
+            System.out.println("✅ Test depositar -50: PASSED. Error esperado: " + e.getMessage());
+        }
+    }
+}
